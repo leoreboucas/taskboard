@@ -1,0 +1,17 @@
+.accountButton {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    text-decoration: none;
+    text-align: center;
+    width: 130px;
+}
+
+.accountButton:hover {
+    background-color: var(--primary-dark-color);
+    color: var(--light-color)
+}

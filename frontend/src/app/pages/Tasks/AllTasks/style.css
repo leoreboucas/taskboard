@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+.task-title {
+  padding: 20px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr)); 
+  gap: 5px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.task-card {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all ease .3s;
+  border: 2px solid var(--primary-color);
+}
+
+.task-card:hover {
+  border:2px solid var(--primary-dark-color);
+}
+
+.input-card {
+  margin: 10px 0px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.task-card input,
+.task-card textarea,
+.task-card select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.task-card input,
+.task-card textarea {
+  background-color: #fff;
+  border: 1px solid black;
+  width: 90%;
+}
+
+
+
+.task-card textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+.task-status {
+  display: inline-block;
+  font-weight: bold;
+  padding: 10px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+
+}
+
+.task-status.select {
+  width: 90%;
+  
+}
+
+.task-status.pendente {
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+.task-status.andamento {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.task-status.concluída {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-task {
+  gap: 20px;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: var(--light-color);
+}
+
+
+.btn-mode {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-edit {
+  background-color: var(--primary-color);
+}
+
+.btn-edit:hover {
+  background-color: var(--primary-dark-color);
+}
+
+.btn-delete {
+  background-color: var(--delete-color);
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #971111;
+}
+
+.btn-save {
+  background-color: var(--completed-color);
+  color: #fff;
+}
+
+.btn-save:hover {
+  background-color: #0a5307;
+}
+
+.btn-cancel {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.btn-cancel:hover {
+  background-color: var(--primary-dark-color);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .task-container {
+    padding: 20px;
+  }
+
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+}

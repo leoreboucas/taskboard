@@ -1,0 +1,14 @@
+:root {
+    --text-color: #333;
+    --pending-color: #ff9800;
+    --in-progress-color: #2196F3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,123 @@
+.dashboard {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+.state-tasks-list {
+  list-style: none;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.state-tasks-item {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+
+.state-tasks-item:hover {
+  transform: scale(1.02);
+}
+
+/* Cores para cada status */
+.pending {
+    border: 1px solid transparent;
+  border-left: 5px solid var(--pendant-color);
+  transition: all ease-in 0.3s;
+}
+.pending:hover {
+    border: 1px solid var(--pendant-color);
+  border-left: 5px solid var(--pendant-color);
+}
+
+.in-progress {
+    border: 1px solid transparent;
+    border-left: 5px solid var(--primary-dark-color);
+    transition: all ease-in 0.3s;
+}
+.in-progress:hover {
+    border: 1px solid var(--primary-dark-color);
+    border-left: 5px solid var(--primary-dark-color);
+}
+
+.completed {
+    border: 1px solid transparent;
+  border-left: 5px solid var(--completed-color);
+  transition: all ease-in 0.3s;
+}
+.completed:hover {
+    border: 1px solid var(--completed-color);
+  border-left: 5px solid var(--completed-color);
+}
+
+.task-link {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s, transform 0.2s;
+}
+
+.pending-link {
+  color: #FFA500;
+
+}
+
+.progress-link {
+  color: #4A90E2;
+ 
+}
+
+.completed-link {
+  color: #28A745;
+  
+}
+.pending-link:hover {
+  background-color: #FFA5004f;
+}
+
+.progress-link:hover {
+  background-color: #4A90E24f;
+}
+
+.completed-link:hover {
+  background-color: #28a7464f;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 30px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background: var(--primary-dark-color);
+}

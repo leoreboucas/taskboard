@@ -1,0 +1,107 @@
+/* Estilo geral */
+.task-register {
+  width: 800px;
+  margin: 40px auto;
+  padding: 25px;
+  background: var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.task-register-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--secundary-color);
+}
+
+.input-form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-form input,
+.input-form select,
+.input-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eeeeee;
+  background: #ffffff;
+  color: var(--dark-color);
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.input-form input:focus,
+.input-form select:focus,
+.input-form textarea:focus {
+  border-color: var(--secundary-color);
+  outline: none;
+  box-shadow: 0 0 8px var(--primary--dark-color);
+}
+
+.input-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Botões */
+.btn-form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-reset,
+.btn-submit {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-reset {
+  background: #ff4444;
+  color: white;
+}
+
+.btn-reset:hover {
+  background: #cc0000;
+  transform: scale(1.05);
+}
+
+.btn-submit {
+  background: var(--secundary-color);
+  color: #1e1e2f;
+}
+
+.btn-submit:hover {
+  transform: scale(1.05);
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

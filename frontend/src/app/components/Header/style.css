@@ -1,0 +1,32 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--primary-color);
+}
+
+.logo a {
+  position: relative;
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  transition: all ease 0.2s;
+}
+
+.logo a:hover {
+    border: 2px solid var(--light-color);
+}
+
+.logo img {
+  width: 200px;
+  border-radius: 20px;
+  padding: 5px;
+  display: block;
+}
+
+.navbar {
+    display: flex;
+    gap: 50px;
+}

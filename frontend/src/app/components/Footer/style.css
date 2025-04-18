@@ -1,0 +1,58 @@
+/* Estilização geral do footer */
+.footer {
+  background: linear-gradient(180deg, var(--primary-color), var(--dark-color));
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilização dos blocos de informações */
+.footer-info,
+.footer-links,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-social a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 5px 0;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #FFD700; /* Dourado */
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 0.9rem;
+}
