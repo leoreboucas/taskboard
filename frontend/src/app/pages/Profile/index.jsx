@@ -4,7 +4,7 @@ import axios from "axios";
 import { FaRegEdit } from "react-icons/fa";
 import { IoMdMail, IoMdPerson, IoMdCalendar } from "react-icons/io";
 import "./style.css";
-import { URL_BACKEND } from "../../../constants";
+import { api } from "../../../constants";
 
 const Profile = () => {
   const { isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
@@ -28,8 +28,8 @@ const Profile = () => {
     const viewProfile = async () => {
       try {
         const token = await getAccessTokenSilently();
-        const response = await axios.get(
-          `${URL_BACKEND}/user/myprofile`,
+        const response = await api.get(
+          `/user/myprofile`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

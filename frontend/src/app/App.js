@@ -6,13 +6,12 @@ import Home from './pages/Home'
 import Profile from './pages/Profile';
 import { Routes, Route } from 'react-router-dom'; 
 import TaskRegister from './pages/Tasks/TaskRegister';
-import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 import { URL_BACKEND } from '../constants';
 import { Bounce, ToastContainer } from 'react-toastify';
 import AllTasks from './pages/Tasks/AllTasks';
 import TaskStatus from './pages/Tasks/TaskStatus';
-
+import { api } from '../constants';
 function App() {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [userExists, setUserExists] = useState(null);
@@ -20,7 +19,7 @@ function App() {
   const verifyIfUserExists = useCallback(async () => {
     try {
       const token = await getAccessTokenSilently();
-      const response = await axios.get(`${URL_BACKEND}/user`, {
+      const response = await api.get(`/user`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -40,7 +39,7 @@ function App() {
     try {
       const token = await getAccessTokenSilently();
       
-      const response = await axios.post(
+      const response = await api.post(
         `${URL_BACKEND}/register`,
         {
           username: user.nickname,

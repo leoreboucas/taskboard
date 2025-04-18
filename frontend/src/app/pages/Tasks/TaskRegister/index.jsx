@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { STATE_TASK } from "../categories";
 import { useAuth0 } from "@auth0/auth0-react";
-import axios from "axios";
 import "./style.css"; 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { URL_BACKEND } from "../../../../constants";
+import { api } from "../../../../constants";
 import { useNavigate } from "react-router-dom";
 
 const notify = () => toast("Tarefa Registrada");
@@ -25,8 +24,8 @@ function TaskRegister() {
     e.preventDefault();
     try {
       const token = await  getAccessTokenSilently();
-      const response = await axios.post(
-        `${URL_BACKEND}/tasks/create`,
+      const response = await api.post(
+        `/tasks/create`,
         {
           task,
           desc,
@@ -39,7 +38,7 @@ function TaskRegister() {
           },
           params: {
             id: user.sub,
-            email: user.email
+            email: user.email,
           },
         }
       );

@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import { URL_BACKEND } from "../../../../constants";
+import { api } from "../../../../constants";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./style.css"; 
 
@@ -16,15 +15,18 @@ const { user, getAccessTokenSilently, isAuthenticated } = useAuth0();
   const getAllTasks = useCallback(async () => {
     try {
       const token = await getAccessTokenSilently();
-      const response = await axios.get(`${URL_BACKEND}/tasks/all`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        params: {
-          id: user.sub,
-          email: user.email,
-        },
-      });
+      const response = await api.get(
+  "/tasks/all",
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    params: {
+      id: user.sub,
+      email: user.email,
+    },
+  }
+);
       setTasks(response.data.tasks);
     } catch (error) {
       console.error("Falha na pesquisa:", error);
@@ -76,8 +78,8 @@ const { user, getAccessTokenSilently, isAuthenticated } = useAuth0();
       ...taskUpdated,
       date: newDate,
     };
-    const response = await axios.put(
-      `${URL_BACKEND}/tasks/update/${editingTask}`,
+    const response = await api.put(
+      `/tasks/update/${editingTask}`,
       taskToReq,
       {
         headers: {
@@ -109,14 +111,17 @@ const { user, getAccessTokenSilently, isAuthenticated } = useAuth0();
 
      try {
        const token = await getAccessTokenSilently();
-       await axios.delete(`${URL_BACKEND}/tasks/delete/${id}`, {
-         headers: {
-           Authorization: `Bearer ${token}`,
-         },
-         params: {
-           taskId: id,
-         },
-       });
+       await api.delete(
+         `/tasks/delete/${id}`,
+         {
+           headers: {
+             Authorization: `Bearer ${token}`,
+           },
+           params: {
+             taskId: id,
+           },
+         }
+       );
 
        await getAllTasks();
      } catch (error) {

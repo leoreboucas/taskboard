@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import axios from "axios";
-import { URL_BACKEND } from "../../../../constants";
 import { useAuth0 } from "@auth0/auth0-react";
+import { api } from "../../../../constants";
+
+
 
 function Dashboard() {
   const [tasks, setTasks] = useState([]);
@@ -13,18 +14,22 @@ function Dashboard() {
 
   const { user, getAccessTokenSilently, isAuthenticated } = useAuth0();
 
+
   const getAllTasks = useCallback(async () => {
       try {
         const token = await getAccessTokenSilently();
-        const response = await axios.get(`${URL_BACKEND}/tasks/all`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          params: {
-            id: user.sub,
-            email: user.email,
-          },
-        });
+        const response = await api.get(
+          `/tasks/all`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            params: {
+              id: user.sub,
+              email: user.email,
+            },
+          }
+        );
         setTasks(response.data.tasks);
       } catch (error) {
         console.error("Falha na pesquisa:", error);
