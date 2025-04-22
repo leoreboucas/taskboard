@@ -9,21 +9,7 @@ import { api } from "../../../constants";
 const Profile = () => {
   const { isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
   const [user, setUser] = useState({});
-  const [selectedImage, setSelectedImage] = useState(null);
-  const fileInputRef = useRef(null);
-
-  const handleButtonClick = () => {
-    fileInputRef.current.click();
-  };
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setSelectedImage(imageUrl);
-    }
-  };
-
+  
   useEffect(() => {
     const viewProfile = async () => {
       try {
@@ -56,24 +42,14 @@ const Profile = () => {
         <div className="profile-header">
           <div className="profile-image-wrapper">
             <img
-              src={selectedImage || user.imageProfile}
+              src={user.imageProfile}
               alt={user.name}
               className="profile-image"
             />
-            <button className="editProfileButton" onClick={handleButtonClick}>
-              <FaRegEdit size="20px" />
-            </button>
           </div>
           <h2>{user.name}</h2>
           <p className="profile-role">{user.role || "Usuário Padrão"}</p>
-          {/* Input oculto */}
-          <input
-            type="file"
-            accept="image/*"
-            ref={fileInputRef}
-            style={{ display: "none" }}
-            onChange={handleFileChange}
-          />
+          
         </div>
 
         <div className="profile-info">

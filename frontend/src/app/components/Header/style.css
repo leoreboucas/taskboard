@@ -5,6 +5,11 @@ header {
     align-items: center;
     padding: 20px;
     background: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 .logo a {
@@ -25,8 +30,61 @@ header {
   padding: 5px;
   display: block;
 }
-
 .navbar {
     display: flex;
     gap: 50px;
+
+}
+
+
+.menuLinkContainer {
+    display: flex;
+    gap: 20px;
+}
+.menuLinkContainer a {
+    text-decoration: none;
+}
+
+.menuButtonContainer {
+    width: 100%;
+    display: none;
+}
+
+.menuButton {
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+.menuButton svg {
+  color: var(--secundary-color);
+}
+
+.menuLinkAside {
+  position: fixed;
+  right: -100vw; /* Escondido por padrão */
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: right ease 0.3s;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 768px) {
+  .menuLinkContainer{
+    display: none;
+  }
+    .menuLinkAside {
+    display: flex;
+}
+  .menuButtonContainer {
+    display: block;
+  }
+  
 }

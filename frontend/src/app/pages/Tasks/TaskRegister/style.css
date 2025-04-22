@@ -1,6 +1,6 @@
-/* Estilo geral */
 .task-register {
-  width: 800px;
+  width: 90%;
+  max-width: 800px;
   margin: 40px auto;
   padding: 25px;
   background: var(--primary-color);
