@@ -1,7 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
-import { FaRegEdit } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import { IoMdMail, IoMdPerson, IoMdCalendar } from "react-icons/io";
 import "./style.css";
 import { api } from "../../../constants";
